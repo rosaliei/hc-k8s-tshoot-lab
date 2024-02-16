@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: runtime-container
+spec:
+  selector:
+    matchLabels:
+      app: runtime-container
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: runtime-container
+    spec:
+      containers:
+        - name: shell
+          image: centos:7
+          command:
+            - sh
+            - '-c'
+            - tail -f /dev/null

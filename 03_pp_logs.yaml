@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hiccup
+spec:
+  selector:
+    matchLabels:
+      app: hiccup
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hiccup
+    spec:
+      containers:
+        - name: theapp
+          image: centos:7
+          command:
+            - sh
+            - '-c'
+            - "for x in {1..20}; do echo doing some good work here in $x ; sleep 1; done; echo bye for now; exit"

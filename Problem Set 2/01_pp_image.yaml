@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: confused-imager
+spec:
+  selector:
+    matchLabels:
+      app: whatever
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: whatever
+    spec:
+      containers:
+        - name: something
+          image: simpleservice:0.5.0
