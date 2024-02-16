@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unhappy-camper
+  name: hc-pset-1
 spec:
   selector:
     matchLabels:
-      app: whatever
+      app: hc-pset-1
   replicas: 1
   template:
     metadata:
       labels:
-        app: whatever
+        app: hc-pset-1
     spec:
       containers:
         - name: shell
@@ -18,4 +18,4 @@ spec:
           command:
             - sh
             - '-c'
-            - echo "I will just print something here and then exit"
+            - echo "HELLOCLOUD ~ I AM HERE"
